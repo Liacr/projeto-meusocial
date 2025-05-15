@@ -10,6 +10,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: Arial, sans-serif;
 }
 
 .celular {
@@ -31,14 +32,13 @@ body {
   overflow-y: auto;
   background: white;
   display: none;
-  
   scrollbar-width: thin;
   scrollbar-color: rgba(91, 91, 91, 0.73) transparent;
 }
 
 #tela-github,
-#tela-youtube,
-#tela-facebook {
+#tela-linkedin,
+#tela-behance {
   overflow-y: scroll;
 }
 
@@ -61,8 +61,8 @@ body {
 
 #home:target ~ .celular #tela-home,
 #github:target ~ .celular #tela-github,
-#youtube:target ~ .celular #tela-youtube,
-#facebook:target ~ .celular #tela-facebook {
+#linkedin:target ~ .celular #tela-linkedin,
+#behance:target ~ .celular #tela-behance {
   display: block;
 }
 
@@ -75,25 +75,65 @@ body {
   gap: 15px;
 }
 
-.redes-sociais a {
+.social-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.social-icon {
+  font-family: 'Courier New', Courier, monospace;
   display: block;
   width: 60px;
   height: 60px;
   border-radius: 50%;
   overflow: hidden;
-  transition: transform 0.3s;
+  transition: all 0.3s ease;
   border: 1px solid rgb(132, 132, 132);
 }
 
-.redes-sociais a:hover {
+.social-icon:hover {
   transform: scale(1.1);
   border: 1px solid rgb(255, 255, 255);
 }
 
-.redes-sociais img {
+.social-icon img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.access-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  background-color: #e2e2e2;
+  color: rgb(88, 88, 88);
+  font-size: 0.9em;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 6px;
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transform: translateX(10px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  letter-spacing: 0.5px;
+}
+
+.social-item:hover .access-link {
+  opacity: 1;
+  width: 80px;
+  transform: translateX(0);
+}
+
+.access-link:hover {
+  background-color: #c3c3c3;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 .tela img {
